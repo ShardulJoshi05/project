@@ -11,26 +11,49 @@
     <div class="startDateTime">
         <div id="startDate">
             <label for="sDate">Start Date</label>
-            <input type="date" id="sDate">
+            <input type="date" id="sDate" required>
         </div>
         <div id="startTime">
             <label for="sTime">Start Time</label>
-            <input type="time" id="sTime">
+            <input type="time" id="sTime" required>
         </div>
     </div>
 
     <div class="endDateTime">
         <div id="endDate">
             <label for="eDate">End Date</label>
-            <input type="date" id="eDate">
+            <input type="date" id="eDate" required>
         </div>
         <div id="endTime">
             <label for="eTime">End Time</label>
-            <input type="time" id="eTime">
+            <input type="time" id="eTime" required>
         </div>
     </div>
 
     <button onclick="startTimer()">Confirm</button>
+
+
+    <div class="container">
+
+        <div id='message'>
+            
+        </div>
+        <div id='days'>
+
+        </div>
+
+        <div id='hours'>
+
+        </div>
+
+        <div id='minutes'>
+
+        </div>
+
+        <div id='seconds'>
+
+        </div>
+    </div>
 
     <script src="js/index.js"></script>
 
