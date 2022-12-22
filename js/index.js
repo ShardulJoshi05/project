@@ -8,11 +8,16 @@ function startTimer() {
 
 
     if (startDate == '' || startTime == '' || endDate == '' || endTime == '') {
-        var msg = 'Please fill all the fields';
+        let msg = 'Please fill all the fields';
         document.getElementById('message').innerText = msg;
 
         return;
-    } else {
+    } else if (startObj > endObj) {
+        let msg = 'Start Date/Start Time cannot be less than End Date/End Time';
+        document.getElementById('message').innerText = msg;
+        return;
+    }
+    else {
         function x() {
             var timer = setInterval(function () {
                 startObj = addSeconds(startObj, 1);
