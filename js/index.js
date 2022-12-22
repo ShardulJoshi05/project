@@ -1,5 +1,5 @@
 let reset = 0;
-
+let timer;
 function startTimer() {
     var startDate = document.getElementById('sDate').value;
     var startTime = document.getElementById('sTime').value;
@@ -8,7 +8,6 @@ function startTimer() {
     var startObj = new Date(startDate + ' ' + startTime);
     var endObj = new Date(endDate + ' ' + endTime);
     
-    document.getElementById('message').innerText = '';
 
     if (startDate == '' || startTime == '' || endDate == '' || endTime == '') {
         let msg = 'Please fill all the fields';
@@ -22,13 +21,14 @@ function startTimer() {
     }
     else {
         function x() {
-            var timer = setInterval(function () {
+            timer = setInterval(function () {
                 startObj = addSeconds(startObj, 1);
-                if (calculateDifference(startObj, endObj) == 0||reset) {
+                if (calculateDifference(startObj, endObj)==0) {
                     clearInterval(timer);
-                    resetElements();
-                    reset = 0;
+                    let msg = 'Time Up';
+                    document.getElementById('message').innerText = msg;
                     return;
+
                 }
             }, 1000);
         }
@@ -45,7 +45,7 @@ function resetElements() {
     document.getElementById('hours').innerText = '';
     document.getElementById('minutes').innerText='';
     document.getElementById('seconds').innerText = '';
-    document.getElementById('message').innerText = '';
+    document.getElementById('message').innerText = 'Welcome';
 }
 
 function calculateDifference(start,end) {
@@ -77,4 +77,8 @@ function addSeconds(sdate, seconds) {
 
 function resetTimer() {
     reset = 1;
+    clearInterval(timer);
+    resetElements();
+    reset = 0;
+    return;
 }

@@ -1,5 +1,65 @@
-.container {
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+.main {
+  width: 100%;
+  height: 100vh;
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+#header {
+  color: black;
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+}
+#message {
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  font-size: 1.5rem;
+}
+#dateTime {
+  color: black;
+  height: 20vh;
+  width: 100vh;
+  display: flexbox;
+  flex-direction: row;
+}
+#buttons {
+  color: black;
+  height: 20vh;
+}
+
+#container {
+  color: black;
+  height: 20vh;
+  width: 100vh;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
+}
+
+#button1 {
+  height: 1.5rem;
+  margin: 10px;
+  padding: 2px;
+  font-size: 24;
+}
+
+#button2 {
+  height: 1.5rem;
+  margin: 10px;
+  padding: 2px;
+  font-size: 24;
 }

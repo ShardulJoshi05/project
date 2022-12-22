@@ -8,56 +8,61 @@
     <title>Timer</title>
 </head>
 <body>
-    <div class="startDateTime">
-        <div id="startDate">
-            <label for="sDate">Start Date</label>
-            <input type="date" id="sDate" required>
-        </div>
-        <div id="startTime">
-            <label for="sTime">Start Time</label>
-            <input type="time" id="sTime" required>
-        </div>
-    </div>
+<!-- Main div -->
+<div class='main'>
 
-    <div class="endDateTime">
-        <div id="endDate">
-            <label for="eDate">End Date</label>
-            <input type="date" id="eDate" required>
-        </div>
-        <div id="endTime">
-            <label for="eTime">End Time</label>
-            <input type="time" id="eTime" required>
-        </div>
-    </div>
+    <!-- Header Div -->
+    <div id='header'>Countdown Timer</div>
 
-    <div>
-        <button onclick="startTimer()">Confirm</button>
-        <button onclick="resetTimer()">Reset</button>
+    <!-- Error Message Div -->
+    <div id='message'>Welcome</div>
+
+    <!-- Date/Time Select Div -->
+    
+        <div class="dateTime">
+            <div id="startDate"  style="margin:20px;">
+                <label for="sDate">Start Date</label>
+                <input type="date" id="sDate" required>
+            </div>
+            <div id="startTime"  style="margin: 20px;">
+                <label for="sTime">Start Time</label>
+                <input type="time" id="sTime" required>
+            </div>
+            <div id="endDate"  style="margin: 20px;">
+                <label for="eDate">End Date</label>
+                <input type="date" id="eDate" required>
+            </div>
+            <div id="endTime"  style="margin: 20px;">
+                <label for="eTime">End Time</label>
+                <input type="time" id="eTime" required>
+            </div>
+        </div>
+    
+
+    <!-- Buttons Div -->
+    <div id='buttons'>
+        <button id='button1'onclick="startTimer()">Confirm</button>
+        <button id='button2'onclick="resetTimer()">Reset</button>
     </div>    
 
-    <div class="container">
+    <!-- Countdown Div -->
+    <div id="container">
 
-        <div id='message'>
+        <div id='days'></div>
 
-        </div>
-        <div id='days'>
+        <div id='hours'></div>
 
-        </div>
+        <div id='minutes'></div>
 
-        <div id='hours'>
-
-        </div>
-
-        <div id='minutes'>
-
-        </div>
-
-        <div id='seconds'>
-
-        </div>
+        <div id='seconds'></div>
     </div>
+</div>
+    
 
-    <script src="js/index.js"></script>
+
+
+
+<script src="js/index.js"></script>
 
 </body>
 </html>
