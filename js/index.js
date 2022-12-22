@@ -1,3 +1,5 @@
+let reset = 0;
+
 function startTimer() {
     var startDate = document.getElementById('sDate').value;
     var startTime = document.getElementById('sTime').value;
@@ -5,7 +7,8 @@ function startTimer() {
     var endTime = document.getElementById('eTime').value;
     var startObj = new Date(startDate + ' ' + startTime);
     var endObj = new Date(endDate + ' ' + endTime);
-
+    
+    document.getElementById('message').innerText = '';
 
     if (startDate == '' || startTime == '' || endDate == '' || endTime == '') {
         let msg = 'Please fill all the fields';
@@ -21,13 +24,28 @@ function startTimer() {
         function x() {
             var timer = setInterval(function () {
                 startObj = addSeconds(startObj, 1);
-                if (calculateDifference(startObj, endObj) == 0) {
+                if (calculateDifference(startObj, endObj) == 0||reset) {
                     clearInterval(timer);
+                    resetElements();
+                    reset = 0;
+                    return;
                 }
             }, 1000);
         }
         x();
     }
+}
+
+function resetElements() {
+    document.getElementById('sDate').value='';
+    document.getElementById('eDate').value = '';
+    document.getElementById('sTime').value = '';
+    document.getElementById('eTime').value = '';
+    document.getElementById('days').innerText='';
+    document.getElementById('hours').innerText = '';
+    document.getElementById('minutes').innerText='';
+    document.getElementById('seconds').innerText = '';
+    document.getElementById('message').innerText = '';
 }
 
 function calculateDifference(start,end) {
@@ -54,4 +72,9 @@ function calculateDifference(start,end) {
 function addSeconds(sdate, seconds) {
     sdate.setSeconds(sdate.getSeconds() + seconds);
     return sdate;
+}
+
+
+function resetTimer() {
+    reset = 1;
 }
